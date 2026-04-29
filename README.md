@@ -8,3 +8,5 @@ Web-based Operating Systems project for file system recovery and optimization.
 - Defragmentation and Optimization
 ## Recovery System
 The project includes disk crash simulation, corrupted block detection, journal-based recovery, and RAID recovery monitoring.
+## Disk Optimization
+The project includes fragmentation analysis, defragmentation, read/write performance visualization, and disk health reporting.
