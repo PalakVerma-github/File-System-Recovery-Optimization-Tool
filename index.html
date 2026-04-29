@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File System Recovery and Optimization Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-icon">FS</div>
+      <div>
+        <h2>Recovery OS</h2>
+        <p>File System Simulator</p>
+      </div>
+    </div>
+
+  <nav>
+  <a href="#overview">Overview</a>
+  <a href="#allocation">File Allocation</a>
+  <a href="#diskmap">Disk Map</a>
+  <a href="#recovery">Recovery Journal</a>
+  <a href="#optimization">Optimization</a>
+  </nav>
+
+    <div class="side-card">
+      <span>System Mode</span>
+      <strong>Simulation Active</strong>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <section class="hero" id="overview">
+      <div>
+        <span class="tag">Operating Systems Project</span>
+        <h1>File System Recovery & Optimization Tool</h1>
+        <p>
+          Simulates free-space management, file allocation, crash recovery,
+          journaling, fragmentation control and disk read/write optimization.
+        </p>
+      </div>
+
+      <div class="disk-core">
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <div class="core-dot"></div>
+        <span class="packet p1"></span>
+        <span class="packet p2"></span>
+        <span class="packet p3"></span>
+      </div>
+
+      <div class="health-card">
+        <div class="pulse"></div>
+        <h3>Disk Health</h3>
+        <h2>98%</h2>
+        <p>Stable • No crash detected</p>
+      </div>
+    </section>
+
+    <section class="visual-grid">
+
+      <div class="glass-card gauge-card">
+        <h3>Storage Usage</h3>
+        <div class="gauge">
+          <div class="gauge-inner">
+            <span id="usagePercent">0%</span>
+            <small>Used</small>
+          </div>
+        </div>
+        <p class="caption">Bitmap based free-space tracking</p>
+      </div>
+
+      <div class="glass-card">
+        <h3>System Metrics</h3>
+        <div class="metric-row">
+          <span>Total Blocks</span>
+          <strong id="totalBlocks">128</strong>
+        </div>
+        <div class="metric-row">
+          <span>Free Blocks</span>
+          <strong id="freeBlocks">128</strong>
+        </div>
+        <div class="metric-row">
+          <span>Used Blocks</span>
+          <strong id="usedBlocks">0</strong>
+        </div>
+        <div class="metric-row danger-text">
+          <span>Corrupted Blocks</span>
+          <strong id="corruptBlocks">0</strong>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <h3>Algorithm Layer</h3>
+        <div class="algo-stack">
+          <span>Contiguous Allocation</span>
+          <span>Linked Allocation</span>
+          <span>Indexed Allocation</span>
+          <span>Journaling Recovery</span>
+          <span>Defragmentation</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="glass-card architecture-card">
+      <h3>File System Architecture Flow</h3>
+      <div class="flow">
+        <div>User Request</div>
+        <span>→</span>
+        <div>Directory Table</div>
+        <span>→</span>
+        <div>Allocation Engine</div>
+        <span>→</span>
+        <div>Disk Blocks</div>
+        <span>→</span>
+        <div>Journal Backup</div>
+        <span>→</span>
+        <div>Recovery Engine</div>
+      </div>
+    </section>
+    <section class="feature-grid">
+
+  <!-- TERMINAL -->
+  <div class="glass-card">
+    <h3>Interactive Command Terminal</h3>
+
+    <div class="command-box">
+      <input
+        id="terminalInput"
+        placeholder="create report.txt 20 | scan | recover"
+      >
+      <button class="primary">Run</button>
+    </div>
+
+    <div class="terminal mini-terminal">
+      <p>> Type commands to simulate file system operations</p>
+      <p>> Example: create notes.txt 25</p>
+      <p>> Example: recover</p>
+    </div>
+  </div>
+
+  <!-- AI DISK SCANNER -->
+  <div class="glass-card scanner-card">
+    <h3>AI Disk Scanner</h3>
+
+    <div class="scanner">
+      <div class="scanner-line"></div>
+
+      <div class="scanner-grid">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+
+      <p>Scanning disk blocks...</p>
+    </div>
+
+    <button class="green">Scan Disk</button>
+  </div>
+
+
+  <div class="glass-card">
+    <h3>Live Activity Timeline</h3>
+
+    <div class="timeline">
+
+      <p>
+        <span></span>
+        System boot completed
+      </p>
+
+      <p>
+        <span></span>
+        Bitmap initialized
+      </p>
+
+      <p>
+        <span></span>
+        Journal backup loaded
+      </p>
+
+      <p>
+        <span></span>
+        Waiting for user operation
+      </p>
+
+      <p>
+        <span></span>
+        Monitoring disk health
+      </p>
+
+    </div>
+  </div>
+  </section>
+<section class="glass-card directory-card">
+  <h3>Virtual Directory Tree</h3>
+  <div id="directoryTree" class="directory-tree">
+    <p>📁 root</p>
+    <ul>
+      <li>📁 documents</li>
+      <li>📁 terminal</li>
+      <li>📁 recovery</li>
+    </ul>
+  </div>
+</section>
+
+<section class="insight-grid">
+
+  <div class="glass-card insight-card">
+    <h3>Disk Health Report</h3>
+    <div class="health-meter">
+      <div class="health-fill" id="healthFill"></div>
+    </div>
+    <p><strong id="healthScore">98%</strong> Overall Disk Stability</p>
+    <small>Based on corruption, fragmentation and block usage.</small>
+  </div>
+
+  <div class="glass-card insight-card">
+    <h3>Fragmentation Analyzer</h3>
+    <div class="fragment-box">
+      <span>Current Fragmentation</span>
+      <strong id="fragmentScore">0%</strong>
+    </div>
+    <p>Analyzes scattered file blocks and recommends defragmentation.</p>
+  </div>
+
+  <div class="glass-card insight-card">
+    <h3>Bad Sector Monitor</h3>
+    <div id="badSectorList" class="bad-sector-list">
+      No bad sectors detected.
+    </div>
+  </div>
+
+</section>
+    <section class="workspace" id="allocation">
+
+      <div class="glass-card form-card">
+        <h3>File Operation Console</h3>
+
+        <label>File Name</label>
+        <input id="fileName" placeholder="report.txt">
+
+        <label>File Size</label>
+        <input id="fileSize" type="number" placeholder="Size in KB">
+        <label>File Content</label>
+        <textarea id="fileContent" placeholder="Write file content here..."></textarea>
+        <label>Directory Path</label>
+        <input id="directoryPath" placeholder="/root/documents">
+
+        <label>Allocation Method</label>
+        <select id="allocationMethod">
+          <option>Contiguous Allocation</option>
+          <option>Linked Allocation</option>
+          <option>Indexed Allocation</option>
+        </select>
+
+        <label>Access Method</label>
+        <select id="accessMethod">
+          <option>Sequential Access</option>
+          <option>Direct Access</option>
+        </select>
+
+        <div class="btn-row">
+          <button class="primary">Create File</button>
+          <button class="gray">Read File</button>
+          <button class="red">Delete File</button>
+        </div>
+      </div>
+
+      <div class="glass-card disk-card" id="diskmap">
+        <div class="section-title">
+          <h3>Live Disk Block Map</h3>
+          <div class="legend">
+            <span><b class="free-dot"></b>Free</span>
+            <span><b class="used-dot"></b>Used</span>
+            <span><b class="bad-dot"></b>Corrupt</span>
+            <span><b class="rec-dot"></b>Recovered</span>
+          </div>
+        </div>
+
+        <div id="diskGrid" class="disk-grid"></div>
+
+        <h4>Bitmap Free-Space View</h4>
+        <div id="bitmapStrip" class="bitmap-strip"></div>
+      </div>
+
+    </section>
+
+    <section class="bottom-grid">
+
+      <div class="glass-card">
+        <h3>File Allocation Table</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Path</th>
+              <th>Blocks</th>
+              <th>Method</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="fileTable">
+            <tr><td colspan="5">No file records available.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="glass-card metadata-card">
+          <h3>File Metadata Viewer</h3>
+
+            <div id="metadataViewer" class="metadata-viewer">
+                <p>Select or read a file to view metadata.</p>
+            </div>
+        </div>
+        <div class="glass-card raid-card">
+
+  <h3>RAID Recovery Monitor</h3>
+
+  <div class="raid-status">
+
+    <div class="raid-row">
+      <span>RAID Mode</span>
+      <strong id="raidMode">RAID 1 Mirroring</strong>
+    </div>
+
+    <div class="raid-row">
+      <span>Mirror Health</span>
+      <strong id="mirrorHealth">Stable</strong>
+    </div>
+
+    <div class="raid-row">
+      <span>Recovery Readiness</span>
+      <strong id="recoveryReady">98%</strong>
+    </div>
+
+    <div class="raid-row">
+      <span>Backup Snapshot</span>
+      <strong id="snapshotStatus">Available</strong>
+    </div>
+
+    <div class="raid-row">
+      <span>Disk Redundancy</span>
+      <strong id="redundancyStatus">Enabled</strong>
+    </div>
+
+  </div>
+
+</div>
+      <div class="glass-card" id="recovery">
+        <h3>Recovery Journal</h3>
+        <div class="terminal">
+          <p>> Journal initialized</p>
+          <p>> Metadata snapshot created</p>
+          <p>> Disk bitmap loaded</p>
+          <p>> Waiting for user operation...</p>
+        </div>
+
+        <div class="btn-row">
+          <button class="red">Simulate Crash</button>
+          <button class="yellow">Recover</button>
+          <button class="green">Defragment</button>
+          <button class="green" id="downloadBtn">Download File</button>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="glass-card performance" id="optimization">
+      <h3>Read/Write Performance Visualization</h3>
+
+      <div class="perf-row">
+        <span>Before Optimization</span>
+        <div class="track"><div class="fill before"></div></div>
+        <strong>70 ms</strong>
+      </div>
+
+      <div class="perf-row">
+        <span>After Optimization</span>
+        <div class="track"><div class="fill after"></div></div>
+        <strong>30 ms</strong>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
